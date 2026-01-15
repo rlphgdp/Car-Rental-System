@@ -72,6 +72,7 @@
             this.reportAndAnalyticsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reportAndAnalyticsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.reportAndAnalyticsBtn.UseVisualStyleBackColor = false;
+            this.reportAndAnalyticsBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // docuManagementBtn
             // 
@@ -97,6 +98,7 @@
             this.docuManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.docuManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.docuManagementBtn.UseVisualStyleBackColor = false;
+            this.docuManagementBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // damageAndInspecBtn
             // 
@@ -122,6 +124,7 @@
             this.damageAndInspecBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.damageAndInspecBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.damageAndInspecBtn.UseVisualStyleBackColor = false;
+            this.damageAndInspecBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // maintenanceMangementBtn
             // 
@@ -147,6 +150,7 @@
             this.maintenanceMangementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.maintenanceMangementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.maintenanceMangementBtn.UseVisualStyleBackColor = false;
+            this.maintenanceMangementBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // vehManagementBtn
             // 
@@ -172,6 +176,7 @@
             this.vehManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.vehManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.vehManagementBtn.UseVisualStyleBackColor = false;
+            this.vehManagementBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // panelLogo
             // 
