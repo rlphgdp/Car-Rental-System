@@ -10,20 +10,20 @@ public class WindowControls {
     private Rectangle _originalBounds;
     private bool _isMaximized = false;
 
-    // DRAG FUNCTION BOILER PLATE
-    [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-    private extern static void ReleaseCapture();
-    [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-    private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
     public WindowControls(Form formInput) {
         _form = formInput;
-    
+
         // Add this function when the inputed form is shown
         _form.Shown += (s, e) => {
             _originalBounds = _form.Bounds;
         };
     }
+
+    // DRAG FUNCTION BOILER PLATE
+    [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+    private extern static void ReleaseCapture();
+    [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+    private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
     public void Drag(MouseEventArgs e) {
         if (e.Button == MouseButtons.Left && !_isMaximized) {

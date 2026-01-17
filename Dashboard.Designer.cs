@@ -33,11 +33,13 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.searchButton = new Guna.UI2.WinForms.Guna2Button();
             this.maximizeBtn = new FontAwesome.Sharp.IconButton();
             this.searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.minimizeBtn = new FontAwesome.Sharp.IconButton();
             this.closeBtn = new FontAwesome.Sharp.IconButton();
-            this.searchButton = new Guna.UI2.WinForms.Guna2Button();
+            this.panelDesktop = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -198,6 +200,7 @@ namespace VehicleManagementSystem {
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Controls.Add(this.searchButton);
             this.panelHeader.Controls.Add(this.maximizeBtn);
             this.panelHeader.Controls.Add(this.searchBar);
@@ -211,6 +214,31 @@ namespace VehicleManagementSystem {
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
+            // searchButton
+            // 
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchButton.BackColor = System.Drawing.Color.Transparent;
+            this.searchButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.searchButton.BorderRadius = 20;
+            this.searchButton.BorderThickness = 5;
+            this.searchButton.CustomizableEdges.BottomLeft = false;
+            this.searchButton.CustomizableEdges.TopLeft = false;
+            this.searchButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.searchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.searchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.searchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.searchButton.FillColor = System.Drawing.Color.Transparent;
+            this.searchButton.FocusedColor = System.Drawing.Color.Gray;
+            this.searchButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchButton.ForeColor = System.Drawing.Color.White;
+            this.searchButton.Image = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
+            this.searchButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.searchButton.Location = new System.Drawing.Point(951, 15);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(80, 50);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // maximizeBtn
             // 
             this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,15 +251,16 @@ namespace VehicleManagementSystem {
             this.maximizeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.maximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.maximizeBtn.IconSize = 25;
-            this.maximizeBtn.Location = new System.Drawing.Point(1128, 12);
+            this.maximizeBtn.Location = new System.Drawing.Point(1124, 15);
             this.maximizeBtn.Name = "maximizeBtn";
-            this.maximizeBtn.Size = new System.Drawing.Size(60, 30);
+            this.maximizeBtn.Size = new System.Drawing.Size(60, 50);
             this.maximizeBtn.TabIndex = 2;
             this.maximizeBtn.UseVisualStyleBackColor = false;
             this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
             // 
             // searchBar
             // 
+            this.searchBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBar.BorderRadius = 20;
             this.searchBar.BorderThickness = 5;
             this.searchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -247,12 +276,12 @@ namespace VehicleManagementSystem {
             this.searchBar.IconRight = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
             this.searchBar.IconRightOffset = new System.Drawing.Point(15, 0);
             this.searchBar.IconRightSize = new System.Drawing.Size(25, 25);
-            this.searchBar.Location = new System.Drawing.Point(18, 15);
+            this.searchBar.Location = new System.Drawing.Point(446, 15);
             this.searchBar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.searchBar.Name = "searchBar";
             this.searchBar.PlaceholderText = "";
             this.searchBar.SelectedText = "";
-            this.searchBar.Size = new System.Drawing.Size(687, 50);
+            this.searchBar.Size = new System.Drawing.Size(585, 50);
             this.searchBar.TabIndex = 3;
             this.searchBar.TextOffset = new System.Drawing.Point(10, 0);
             this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
@@ -271,9 +300,9 @@ namespace VehicleManagementSystem {
             this.minimizeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.minimizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.minimizeBtn.IconSize = 28;
-            this.minimizeBtn.Location = new System.Drawing.Point(1062, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(1058, 15);
             this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(60, 30);
+            this.minimizeBtn.Size = new System.Drawing.Size(60, 50);
             this.minimizeBtn.TabIndex = 1;
             this.minimizeBtn.UseVisualStyleBackColor = false;
             this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
@@ -290,42 +319,43 @@ namespace VehicleManagementSystem {
             this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(84)))), ((int)(((byte)(91)))));
             this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.closeBtn.IconSize = 28;
-            this.closeBtn.Location = new System.Drawing.Point(1194, 12);
+            this.closeBtn.Location = new System.Drawing.Point(1190, 15);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(60, 30);
+            this.closeBtn.Size = new System.Drawing.Size(60, 50);
             this.closeBtn.TabIndex = 0;
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // searchButton
+            // panelDesktop
             // 
-            this.searchButton.BackColor = System.Drawing.Color.Transparent;
-            this.searchButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.searchButton.BorderRadius = 20;
-            this.searchButton.BorderThickness = 5;
-            this.searchButton.CustomizableEdges.BottomLeft = false;
-            this.searchButton.CustomizableEdges.TopLeft = false;
-            this.searchButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.searchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.searchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.searchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.searchButton.FillColor = System.Drawing.Color.Transparent;
-            this.searchButton.FocusedColor = System.Drawing.Color.Gray;
-            this.searchButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Image = global::VehicleManagementSystem.Properties.Resources.magnifying_glass;
-            this.searchButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.searchButton.Location = new System.Drawing.Point(625, 15);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(80, 50);
-            this.searchButton.TabIndex = 4;
+            this.panelDesktop.BackColor = System.Drawing.SystemColors.Control;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))));
+            this.panelDesktop.Location = new System.Drawing.Point(354, 80);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1266, 729);
+            this.panelDesktop.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(25, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Vehicle Management";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1620, 809);
             this.ControlBox = false;
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
             this.DoubleBuffered = true;
@@ -334,6 +364,7 @@ namespace VehicleManagementSystem {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -353,5 +384,7 @@ namespace VehicleManagementSystem {
         private FontAwesome.Sharp.IconButton minimizeBtn;
         private Guna.UI2.WinForms.Guna2TextBox searchBar;
         private Guna.UI2.WinForms.Guna2Button searchButton;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelDesktop;
+        private System.Windows.Forms.Label label1;
     }
 }

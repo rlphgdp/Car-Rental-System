@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using VehicleManagementSystem.Resources;
 
 namespace VehicleManagementSystem {
     public partial class Dashboard : Form {
@@ -11,6 +12,7 @@ namespace VehicleManagementSystem {
         private WindowControls WindowActions;
         private IconButton currentActiveButton;
         private Panel leftBorderButton;
+        private Form ActiveForm;
 
         private void InitializedButtonLeftBorder() {
             leftBorderButton = new Panel();
@@ -24,6 +26,21 @@ namespace VehicleManagementSystem {
             InitializedButtonLeftBorder();
             ActivateButton(vehManagementBtn);
             WindowActions = new WindowControls(this);
+            OpenForm(new VehManagement());
+        }
+
+        private void OpenForm(Form childForm) {
+            if (ActiveForm != null) {
+                ActiveForm.Close();
+            }
+            ActiveForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();   
         }
 
         private void ActivateButton(object senderBtn) {
@@ -81,6 +98,10 @@ namespace VehicleManagementSystem {
 
         private void searchBar_Leave(object sender, EventArgs e) {
             searchButton.BorderColor = System.Drawing.Color.FromArgb(213, 218, 223);
+        }
+
+        private void searchButton_Click(object sender, EventArgs e) {
+
         }
     }
 }
