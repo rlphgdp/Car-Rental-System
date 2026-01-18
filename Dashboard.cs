@@ -4,13 +4,15 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using VehicleManagementSystem.Resources;
 using VehicleManagementSystem.Forms;
 using Guna.UI2.WinForms;
 
 namespace VehicleManagementSystem {
+
     public partial class Dashboard : Form {
+
         // Fields
+        public static Dashboard Instance { get; private set; }
         private WindowControls WindowActions;
         private IconButton currentActiveButton;
         private Guna2GradientPanel leftBorderButton;
@@ -53,12 +55,13 @@ namespace VehicleManagementSystem {
         }
 
         public Dashboard() {
+            Instance = this;
             InitializeComponent();
             InitializedButtonLeftBorder();
             InitializeWindow();
         }
 
-        private void OpenForm(Form childForm) {
+        public void OpenForm(Form childForm) {
             if (ActiveForm != null) {
                 ActiveForm.Close();
             }

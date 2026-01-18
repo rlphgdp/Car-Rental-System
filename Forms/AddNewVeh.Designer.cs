@@ -32,6 +32,7 @@
             this.ClientSize = new System.Drawing.Size(1274, 683);
             this.Name = "AddNewVeh";
             this.Text = "AddNewVeh";
+            this.Load += new System.EventHandler(this.AddNewVeh_Load);
             this.ResumeLayout(false);
 
         }

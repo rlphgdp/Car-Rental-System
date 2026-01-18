@@ -1,4 +1,4 @@
-﻿namespace VehicleManagementSystem.Resources {
+﻿namespace VehicleManagementSystem.Forms {
     partial class VehManagement {
         /// <summary>
         /// Required designer variable.
