@@ -57,7 +57,7 @@ namespace VehicleManagementSystem {
             labelComponent.BringToFront();
         }
 
-        private void RemoveHeaderLabel() {
+        public void RemoveHeaderLabel() {
             if (labelComponent != null) {
                 panelHeader.Controls.Remove(labelComponent);
             }

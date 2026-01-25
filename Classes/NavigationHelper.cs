@@ -13,6 +13,7 @@ namespace VehicleManagementSystem.Classes {
             if (ActiveForm != null) {
                 ActiveForm.Close();
             }
+            MainForm.Instance.RemoveHeaderLabel();
             MainForm.ChildFormContainer.Controls.Clear();
             ActiveForm = childForm;
             childForm.TopLevel = false;

@@ -43,7 +43,14 @@ namespace VehicleManagementSystem.Forms {
         public frmAddNewVehicle() {
             InitializeComponent();
 
-           
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e) {
+            DialogResult cancelConfirmation = MessageBox.Show("Are you sure you want to cancel adding new vehicle?", "Cancelation Confirmation", MessageBoxButtons.YesNo);
+
+            if (cancelConfirmation == DialogResult.Yes) {
+                NavigationHelper.OpenForm(new frmVehicleManagement());
+            }
         }
 
         // Automatically add Double Buffering to the whole form
@@ -77,7 +84,6 @@ namespace VehicleManagementSystem.Forms {
                 }
             }
         }
-
 
     }
 }
