@@ -235,7 +235,9 @@
     <Compile Include="Classes\UIRenderer.cs" />
     <Compile Include="Classes\NavigationHelper.cs" />
     <Compile Include="Classes\AppConfig.cs" />
+    <Compile Include="Classes\WindowControls.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,7 +264,6 @@
     <Compile Include="View\Forms\frmVehicleManagement.Designer.cs">
       <DependentUpon>frmVehicleManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\WindowControls.cs" />
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
