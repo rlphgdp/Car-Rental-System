@@ -95,24 +95,34 @@ namespace VehicleManagementSystem.Forms {
                 
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    if (inputVehicleImage != null) {
-                        inputVehicleImage.Dispose();
+                    if (vehiclePictureBox.Image != null) {
+                        vehiclePictureBox.Image.Dispose();
                     }
 
                     string fullPath = openFileDialog.FileName;
                     string fileNameOnly = Path.GetFileName(fullPath);
 
-                    byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
-                    using (MemoryStream ms = new MemoryStream(imageBytes)) {
-                        inputVehicleImage = new Bitmap(ms);
-                    }
+                    //byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+                    //using (MemoryStream ms = new MemoryStream(imageBytes)) {
+                    //    inputVehicleImage = new Bitmap(ms);
+                    //}
                     vehiclePictureBox.Image = Image.FromFile(fullPath);
 
+                    closeImageBtn.Visible = true;
                     addImageBtn.Visible = false;
 
                     //vehicleImageFilename.Text = fileNameOnly;
                 }
             }
+        }
+
+        private void closeImageBtn_Click(object sender, EventArgs e) {
+            if (vehiclePictureBox.Image != null) {
+                vehiclePictureBox.Image.Dispose();
+            }
+
+            closeImageBtn.Visible = false;
+            addImageBtn.Visible = true;
         }
     }
 }

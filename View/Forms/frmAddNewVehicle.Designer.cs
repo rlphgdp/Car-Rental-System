@@ -82,6 +82,7 @@ namespace VehicleManagementSystem.Forms {
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.vehiclePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.closeImageBtn = new FontAwesome.Sharp.IconButton();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -643,6 +644,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             // panelBasicInfoLeft
             // 
+            this.panelBasicInfoLeft.Controls.Add(this.closeImageBtn);
             this.panelBasicInfoLeft.Controls.Add(this.addImageBtn);
             this.panelBasicInfoLeft.Controls.Add(this.label7);
             this.panelBasicInfoLeft.Controls.Add(this.vehiclePictureBox);
@@ -823,6 +825,8 @@ namespace VehicleManagementSystem.Forms {
             // 
             // addImageBtn
             // 
+            this.addImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addImageBtn.BorderRadius = 10;
             this.addImageBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addImageBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -831,10 +835,11 @@ namespace VehicleManagementSystem.Forms {
             this.addImageBtn.FillColor = System.Drawing.Color.WhiteSmoke;
             this.addImageBtn.Font = new System.Drawing.Font("Arial", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addImageBtn.ForeColor = System.Drawing.Color.Gray;
+            this.addImageBtn.HoverState.FillColor = System.Drawing.Color.Gainsboro;
             this.addImageBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.addImageBtn.Location = new System.Drawing.Point(22, 52);
+            this.addImageBtn.Location = new System.Drawing.Point(22, 51);
             this.addImageBtn.Name = "addImageBtn";
-            this.addImageBtn.Size = new System.Drawing.Size(523, 415);
+            this.addImageBtn.Size = new System.Drawing.Size(523, 416);
             this.addImageBtn.TabIndex = 100;
             this.addImageBtn.Text = "Click here to add vehicle image.";
             this.addImageBtn.Click += new System.EventHandler(this.addImageBtn_Click);
@@ -1033,7 +1038,8 @@ namespace VehicleManagementSystem.Forms {
             // 
             // vehiclePictureBox
             // 
-            this.vehiclePictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.vehiclePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vehiclePictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.vehiclePictureBox.BorderRadius = 10;
             this.vehiclePictureBox.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -1044,6 +1050,28 @@ namespace VehicleManagementSystem.Forms {
             this.vehiclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vehiclePictureBox.TabIndex = 101;
             this.vehiclePictureBox.TabStop = false;
+            // 
+            // closeImageBtn
+            // 
+            this.closeImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeImageBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.closeImageBtn.FlatAppearance.BorderColor = System.Drawing.Color.RosyBrown;
+            this.closeImageBtn.FlatAppearance.BorderSize = 2;
+            this.closeImageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeImageBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.closeImageBtn.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.closeImageBtn.IconColor = System.Drawing.Color.RosyBrown;
+            this.closeImageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.closeImageBtn.IconSize = 28;
+            this.closeImageBtn.Location = new System.Drawing.Point(493, 60);
+            this.closeImageBtn.Name = "closeImageBtn";
+            this.closeImageBtn.Size = new System.Drawing.Size(42, 38);
+            this.closeImageBtn.TabIndex = 102;
+            this.closeImageBtn.UseVisualStyleBackColor = false;
+            this.closeImageBtn.Visible = false;
+            this.closeImageBtn.Click += new System.EventHandler(this.closeImageBtn_Click);
             // 
             // frmAddNewVehicle
             // 
@@ -1142,5 +1170,6 @@ namespace VehicleManagementSystem.Forms {
         private Guna.UI2.WinForms.Guna2CircleButton backBtn;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2PictureBox vehiclePictureBox;
+        private FontAwesome.Sharp.IconButton closeImageBtn;
     }
 }
