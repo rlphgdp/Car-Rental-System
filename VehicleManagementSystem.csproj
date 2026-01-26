@@ -237,15 +237,16 @@
     <Compile Include="Classes\AppConfig.cs" />
     <Compile Include="Classes\WindowControls.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
+    <Compile Include="Data\VehicleEnums.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
     <Compile Include="Services\Implementations\VehicleServices.cs" />
     <Compile Include="Services\Interfaces\IVehicleService.cs" />
-    <Compile Include="View\Forms\MainForm.cs">
+    <Compile Include="View\Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\frmAddNewVehicle.cs">
       <SubType>Form</SubType>
@@ -268,8 +269,8 @@
       <DependentUpon>frmVehicleManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Interfaces\IAddNewVehicleView.cs" />
-    <EmbeddedResource Include="View\Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\frmAddNewVehicle.resx">
       <DependentUpon>frmAddNewVehicle.cs</DependentUpon>
@@ -310,6 +311,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\account-circle.png" />
+    <None Include="Resources\chevron-backward-icon.png" />
     <None Include="Resources\save-icon.png" />
     <None Include="Resources\cancel-icon.png" />
     <None Include="Resources\car-gear-icon.png" />

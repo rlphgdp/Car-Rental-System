@@ -1,7 +1,7 @@
 ﻿using FontAwesome.Sharp;
 
 namespace VehicleManagementSystem {
-    partial class MainForm {
+    partial class frmMain {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,12 +26,16 @@ namespace VehicleManagementSystem {
         /// </summary>
         private void InitializeComponent() {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.reportAndAnalyticsBtn = new FontAwesome.Sharp.IconButton();
-            this.docuManagementBtn = new FontAwesome.Sharp.IconButton();
+            this.activityLogsBtn = new FontAwesome.Sharp.IconButton();
+            this.userManagementBtn = new FontAwesome.Sharp.IconButton();
             this.damageAndInspecBtn = new FontAwesome.Sharp.IconButton();
+            this.docuManagementBtn = new FontAwesome.Sharp.IconButton();
             this.maintenanceMangementBtn = new FontAwesome.Sharp.IconButton();
             this.vehManagementBtn = new FontAwesome.Sharp.IconButton();
+            this.dashboardBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelPage = new System.Windows.Forms.Label();
             this.maximizeBtn = new FontAwesome.Sharp.IconButton();
@@ -39,17 +43,21 @@ namespace VehicleManagementSystem {
             this.closeBtn = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.reportAndAnalyticsBtn);
-            this.panelMenu.Controls.Add(this.docuManagementBtn);
+            this.panelMenu.Controls.Add(this.activityLogsBtn);
+            this.panelMenu.Controls.Add(this.userManagementBtn);
             this.panelMenu.Controls.Add(this.damageAndInspecBtn);
+            this.panelMenu.Controls.Add(this.docuManagementBtn);
             this.panelMenu.Controls.Add(this.maintenanceMangementBtn);
             this.panelMenu.Controls.Add(this.vehManagementBtn);
+            this.panelMenu.Controls.Add(this.dashboardBtn);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -57,55 +65,56 @@ namespace VehicleManagementSystem {
             this.panelMenu.Size = new System.Drawing.Size(354, 809);
             this.panelMenu.TabIndex = 0;
             // 
-            // reportAndAnalyticsBtn
+            // activityLogsBtn
             // 
-            this.reportAndAnalyticsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.reportAndAnalyticsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reportAndAnalyticsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reportAndAnalyticsBtn.FlatAppearance.BorderSize = 0;
-            this.reportAndAnalyticsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.reportAndAnalyticsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportAndAnalyticsBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportAndAnalyticsBtn.ForeColor = System.Drawing.Color.Gray;
-            this.reportAndAnalyticsBtn.IconChar = FontAwesome.Sharp.IconChar.CircleExclamation;
-            this.reportAndAnalyticsBtn.IconColor = System.Drawing.Color.DarkGray;
-            this.reportAndAnalyticsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.reportAndAnalyticsBtn.IconSize = 50;
-            this.reportAndAnalyticsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportAndAnalyticsBtn.Location = new System.Drawing.Point(0, 472);
-            this.reportAndAnalyticsBtn.Name = "reportAndAnalyticsBtn";
-            this.reportAndAnalyticsBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.reportAndAnalyticsBtn.Size = new System.Drawing.Size(354, 85);
-            this.reportAndAnalyticsBtn.TabIndex = 5;
-            this.reportAndAnalyticsBtn.Text = "Reports and Analytic";
-            this.reportAndAnalyticsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportAndAnalyticsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.reportAndAnalyticsBtn.UseVisualStyleBackColor = false;
+            this.activityLogsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.activityLogsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.activityLogsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.activityLogsBtn.FlatAppearance.BorderSize = 0;
+            this.activityLogsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.activityLogsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.activityLogsBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activityLogsBtn.ForeColor = System.Drawing.Color.Gray;
+            this.activityLogsBtn.IconChar = FontAwesome.Sharp.IconChar.CircleExclamation;
+            this.activityLogsBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.activityLogsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.activityLogsBtn.IconSize = 50;
+            this.activityLogsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.activityLogsBtn.Location = new System.Drawing.Point(0, 686);
+            this.activityLogsBtn.Name = "activityLogsBtn";
+            this.activityLogsBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.activityLogsBtn.Size = new System.Drawing.Size(354, 85);
+            this.activityLogsBtn.TabIndex = 7;
+            this.activityLogsBtn.Text = "Activity Logs";
+            this.activityLogsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.activityLogsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.activityLogsBtn.UseVisualStyleBackColor = false;
             // 
-            // docuManagementBtn
+            // userManagementBtn
             // 
-            this.docuManagementBtn.BackColor = System.Drawing.Color.Transparent;
-            this.docuManagementBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.docuManagementBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.docuManagementBtn.FlatAppearance.BorderSize = 0;
-            this.docuManagementBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.docuManagementBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.docuManagementBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.docuManagementBtn.ForeColor = System.Drawing.Color.Gray;
-            this.docuManagementBtn.IconChar = FontAwesome.Sharp.IconChar.FileText;
-            this.docuManagementBtn.IconColor = System.Drawing.Color.DarkGray;
-            this.docuManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.docuManagementBtn.IconSize = 50;
-            this.docuManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.docuManagementBtn.Location = new System.Drawing.Point(0, 387);
-            this.docuManagementBtn.Name = "docuManagementBtn";
-            this.docuManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.docuManagementBtn.Size = new System.Drawing.Size(354, 85);
-            this.docuManagementBtn.TabIndex = 4;
-            this.docuManagementBtn.Text = "Document Management";
-            this.docuManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.docuManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.docuManagementBtn.UseVisualStyleBackColor = false;
+            this.userManagementBtn.BackColor = System.Drawing.Color.Transparent;
+            this.userManagementBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userManagementBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userManagementBtn.FlatAppearance.BorderSize = 0;
+            this.userManagementBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.userManagementBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userManagementBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userManagementBtn.ForeColor = System.Drawing.Color.Gray;
+            this.userManagementBtn.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.userManagementBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.userManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.userManagementBtn.IconSize = 50;
+            this.userManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userManagementBtn.Location = new System.Drawing.Point(0, 601);
+            this.userManagementBtn.Name = "userManagementBtn";
+            this.userManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.userManagementBtn.Size = new System.Drawing.Size(354, 85);
+            this.userManagementBtn.TabIndex = 6;
+            this.userManagementBtn.Text = "User Management";
+            this.userManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.userManagementBtn.UseVisualStyleBackColor = false;
+            this.userManagementBtn.Click += new System.EventHandler(this.userManagementBtn_Click);
             // 
             // damageAndInspecBtn
             // 
@@ -122,7 +131,7 @@ namespace VehicleManagementSystem {
             this.damageAndInspecBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.damageAndInspecBtn.IconSize = 50;
             this.damageAndInspecBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 299);
+            this.damageAndInspecBtn.Location = new System.Drawing.Point(0, 513);
             this.damageAndInspecBtn.Name = "damageAndInspecBtn";
             this.damageAndInspecBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.damageAndInspecBtn.Size = new System.Drawing.Size(354, 88);
@@ -131,6 +140,31 @@ namespace VehicleManagementSystem {
             this.damageAndInspecBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.damageAndInspecBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.damageAndInspecBtn.UseVisualStyleBackColor = false;
+            // 
+            // docuManagementBtn
+            // 
+            this.docuManagementBtn.BackColor = System.Drawing.Color.Transparent;
+            this.docuManagementBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.docuManagementBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.docuManagementBtn.FlatAppearance.BorderSize = 0;
+            this.docuManagementBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.docuManagementBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.docuManagementBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.docuManagementBtn.ForeColor = System.Drawing.Color.Gray;
+            this.docuManagementBtn.IconChar = FontAwesome.Sharp.IconChar.FileText;
+            this.docuManagementBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.docuManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.docuManagementBtn.IconSize = 50;
+            this.docuManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.docuManagementBtn.Location = new System.Drawing.Point(0, 428);
+            this.docuManagementBtn.Name = "docuManagementBtn";
+            this.docuManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.docuManagementBtn.Size = new System.Drawing.Size(354, 85);
+            this.docuManagementBtn.TabIndex = 4;
+            this.docuManagementBtn.Text = "Document Management";
+            this.docuManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.docuManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.docuManagementBtn.UseVisualStyleBackColor = false;
             // 
             // maintenanceMangementBtn
             // 
@@ -147,7 +181,7 @@ namespace VehicleManagementSystem {
             this.maintenanceMangementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.maintenanceMangementBtn.IconSize = 50;
             this.maintenanceMangementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 211);
+            this.maintenanceMangementBtn.Location = new System.Drawing.Point(0, 340);
             this.maintenanceMangementBtn.Name = "maintenanceMangementBtn";
             this.maintenanceMangementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.maintenanceMangementBtn.Size = new System.Drawing.Size(354, 88);
@@ -173,7 +207,7 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.vehManagementBtn.IconSize = 50;
             this.vehManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vehManagementBtn.Location = new System.Drawing.Point(0, 123);
+            this.vehManagementBtn.Location = new System.Drawing.Point(0, 252);
             this.vehManagementBtn.Name = "vehManagementBtn";
             this.vehManagementBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.vehManagementBtn.Size = new System.Drawing.Size(354, 88);
@@ -184,13 +218,68 @@ namespace VehicleManagementSystem {
             this.vehManagementBtn.UseVisualStyleBackColor = false;
             this.vehManagementBtn.Click += new System.EventHandler(this.vehManagementBtn_Click);
             // 
+            // dashboardBtn
+            // 
+            this.dashboardBtn.BackColor = System.Drawing.Color.Transparent;
+            this.dashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dashboardBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dashboardBtn.FlatAppearance.BorderSize = 0;
+            this.dashboardBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dashboardBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardBtn.ForeColor = System.Drawing.Color.Gray;
+            this.dashboardBtn.IconChar = FontAwesome.Sharp.IconChar.TachometerAltFast;
+            this.dashboardBtn.IconColor = System.Drawing.Color.DarkGray;
+            this.dashboardBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dashboardBtn.IconSize = 50;
+            this.dashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashboardBtn.Location = new System.Drawing.Point(0, 167);
+            this.dashboardBtn.Name = "dashboardBtn";
+            this.dashboardBtn.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.dashboardBtn.Size = new System.Drawing.Size(354, 85);
+            this.dashboardBtn.TabIndex = 7;
+            this.dashboardBtn.Text = "Dashboard";
+            this.dashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashboardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dashboardBtn.UseVisualStyleBackColor = false;
+            // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.guna2CirclePictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(354, 123);
+            this.panelLogo.Size = new System.Drawing.Size(354, 167);
             this.panelLogo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(88, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 24);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Admin name";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2CirclePictureBox1.Image = global::VehicleManagementSystem.Properties.Resources.account_circle;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(22, 93);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 11;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // panelHeader
             // 
@@ -291,7 +380,7 @@ namespace VehicleManagementSystem {
             this.panelDesktop.Size = new System.Drawing.Size(1266, 729);
             this.panelDesktop.TabIndex = 2;
             // 
-            // MainForm
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,9 +391,12 @@ namespace VehicleManagementSystem {
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
             this.DoubleBuffered = true;
-            this.Name = "MainForm";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -316,7 +408,6 @@ namespace VehicleManagementSystem {
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton vehManagementBtn;
-        private FontAwesome.Sharp.IconButton reportAndAnalyticsBtn;
         private FontAwesome.Sharp.IconButton docuManagementBtn;
         private FontAwesome.Sharp.IconButton damageAndInspecBtn;
         private FontAwesome.Sharp.IconButton maintenanceMangementBtn;
@@ -326,5 +417,10 @@ namespace VehicleManagementSystem {
         private FontAwesome.Sharp.IconButton minimizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel panelDesktop;
         private System.Windows.Forms.Label labelPage;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.Label label1;
+        private IconButton activityLogsBtn;
+        private IconButton userManagementBtn;
+        private IconButton dashboardBtn;
     }
 }

@@ -12,7 +12,7 @@ namespace VehicleManagementSystem.Presentor {
         }
 
         public void saveVehicle() {
-            // LOGIC, VALIDATION START HERE
+            _view.showError("TEST");
         }
     }
 }

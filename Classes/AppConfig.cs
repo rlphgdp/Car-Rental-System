@@ -17,6 +17,7 @@ namespace VehicleManagementSystem.Classes {
         public static class Titles {
             public const string VehManagement = "Vehicle Management";
             public const string MaintenanceManagement = "Maintenance Management";
+            public const string UserManagement = "User Management";
         }
 
         public static class SubTitles {
@@ -33,13 +34,5 @@ namespace VehicleManagementSystem.Classes {
             }
         }
 
-        public enum VehicleType {
-            Economy,
-            Midsize,
-            SUV,
-            Luxury,
-            Van,
-            Truck
-        }
     }
 }

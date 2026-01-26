@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VehicleManagementSystem.Classes;
+using VehicleManagementSystem.Presentor;
 using VehicleManagementSystem.View.Interfaces;
+using VehicleManagementSystem.Services.Implementations;
+using VehicleManagementSystem.Data;
 
 namespace VehicleManagementSystem.Forms {
     public partial class frmAddNewVehicle : Form, IAddNewVehicleView {
+        addNewVehiclePresenter _presenter;
+
 
         // Basic Vehicle Information
         public string VehicleIdentificationNumber => inputVehicleIdentificationNumber.Text;
@@ -37,17 +36,25 @@ namespace VehicleManagementSystem.Forms {
         public string VehicleTransmissionType => inputTransmissionType.Text;
         public string VehicleSeatCapacity => inputSeatCapacity.Text;
 
+        public void showError(string message) {
+            MessageBox.Show(message, "Error");
+        }
+
 
         private Bitmap inputVehicleImage;
 
         public frmAddNewVehicle() {
             InitializeComponent();
 
+            _presenter = new addNewVehiclePresenter(this, new VehicleServices());
+
+            inputCategory.DataSource = Enum.GetValues(typeof(VehicleEnums.Category));
+            inputFuelType.DataSource = Enum.GetValues(typeof (VehicleEnums.FuelType));
+            inputTransmissionType.DataSource = Enum.GetValues(typeof(VehicleEnums.TransmissionType));
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
-           
-
+            _presenter.saveVehicle();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e) {
@@ -58,6 +65,7 @@ namespace VehicleManagementSystem.Forms {
             );
 
             if (cancelConfirmation == DialogResult.Yes) {
+                frmMain.Instance.RemoveHeaderLabel();
                 NavigationHelper.OpenForm(new frmVehicleManagement());
             }
         }

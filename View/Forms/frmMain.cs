@@ -10,10 +10,10 @@ using Guna.UI2.WinForms;
 
 namespace VehicleManagementSystem {
 
-    public partial class MainForm : Form {
+    public partial class frmMain : Form {
 
         // Fields
-        public static MainForm Instance { get; private set; }
+        public static frmMain Instance { get; private set; }
         public static Panel ChildFormContainer { get; private set; }
 
         private WindowControls WindowActions;
@@ -27,7 +27,7 @@ namespace VehicleManagementSystem {
             MenuHandler.ActivateButton(vehManagementBtn);
         }
 
-        public MainForm() {
+        public frmMain() {
             Instance = this;
             InitializeComponent();
 
@@ -77,6 +77,13 @@ namespace VehicleManagementSystem {
             NavigationHelper.OpenForm(new frmVehicleManagement());
         }
 
+        private void userManagementBtn_Click(object sender, EventArgs e) {
+            RemoveHeaderLabel();
+            MenuHandler.ActivateButton(sender);
+            labelPage.Text = AppConfig.Titles.UserManagement;
+            NavigationHelper.OpenForm(new frmVehicleManagement());
+        }
+
         private void maintenanceMangementBtn_Click(object sender, EventArgs e) {
             RemoveHeaderLabel();
             MenuHandler.ActivateButton(sender);
@@ -94,5 +101,7 @@ namespace VehicleManagementSystem {
             }
             base.WndProc(ref m);
         }
+
+        
     }
 }

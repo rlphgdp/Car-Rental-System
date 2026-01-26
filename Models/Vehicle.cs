@@ -9,7 +9,7 @@ namespace VehicleManagementSystem.Models {
         public string LicensePlate { get; set; }
 
         // Basic Info
-        public string Make { get; set; }
+        public string Manufacturer { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public string Color { get; set; }
@@ -23,7 +23,6 @@ namespace VehicleManagementSystem.Models {
         // Purchase & Lifecycle
         public DateTime PurchaseDate { get; set; }
         public decimal? PurchasePrice { get; set; }
-        public DateTime? PlannedDisposalDate { get; set; }
 
         // Usage & Status
         public int CurrentOdometerReading { get; set; }

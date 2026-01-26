@@ -63,6 +63,16 @@ namespace VehicleManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_circle {
+            get {
+                object obj = ResourceManager.GetObject("account-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_circle_icon {
             get {
                 object obj = ResourceManager.GetObject("add-circle-icon", resourceCulture);
@@ -86,6 +96,16 @@ namespace VehicleManagementSystem.Properties {
         internal static System.Drawing.Bitmap car_gear_icon {
             get {
                 object obj = ResourceManager.GetObject("car-gear-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_backward_icon {
+            get {
+                object obj = ResourceManager.GetObject("chevron-backward-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

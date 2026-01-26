@@ -25,5 +25,7 @@ namespace VehicleManagementSystem.View.Interfaces {
         string VehicleFuelType { get; }
         string VehicleTransmissionType { get; }
         string VehicleSeatCapacity { get; }
+
+        void showError(string message);
     }
 }

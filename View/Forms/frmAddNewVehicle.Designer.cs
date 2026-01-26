@@ -28,9 +28,11 @@ namespace VehicleManagementSystem.Forms {
         private void InitializeComponent() {
             this.panelBg = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.backBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLowerInputs = new System.Windows.Forms.TableLayoutPanel();
             this.panelCarRental = new Guna.UI2.WinForms.Guna2Panel();
             this.inputTransmissionType = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -82,6 +84,7 @@ namespace VehicleManagementSystem.Forms {
             this.label8 = new System.Windows.Forms.Label();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tableLowerInputs.SuspendLayout();
             this.panelCarRental.SuspendLayout();
             this.panelRentalDetailsHeader.SuspendLayout();
@@ -121,9 +124,9 @@ namespace VehicleManagementSystem.Forms {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
-            this.panelMain.Controls.Add(this.cancelBtn);
+            this.panelMain.Controls.Add(this.panel2);
+            this.panelMain.Controls.Add(this.backBtn);
             this.panelMain.Controls.Add(this.panel1);
-            this.panelMain.Controls.Add(this.saveBtn);
             this.panelMain.Controls.Add(this.tableLowerInputs);
             this.panelMain.Controls.Add(this.panelBasicInformation);
             this.panelMain.Controls.Add(this.label3);
@@ -140,32 +143,17 @@ namespace VehicleManagementSystem.Forms {
             this.panelMain.Size = new System.Drawing.Size(1250, 683);
             this.panelMain.TabIndex = 11;
             // 
-            // cancelBtn
+            // panel2
             // 
-            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.BorderRadius = 10;
-            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelBtn.FillColor = System.Drawing.Color.Silver;
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Image = global::VehicleManagementSystem.Properties.Resources.cancel_icon;
-            this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancelBtn.Location = new System.Drawing.Point(807, 1095);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(147, 55);
-            this.cancelBtn.TabIndex = 16;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(627, 1172);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 26);
-            this.panel1.TabIndex = 15;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.saveBtn);
+            this.panel2.Controls.Add(this.cancelBtn);
+            this.panel2.Location = new System.Drawing.Point(54, 979);
+            this.panel2.MaximumSize = new System.Drawing.Size(1203, 448);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1150, 73);
+            this.panel2.TabIndex = 16;
             // 
             // saveBtn
             // 
@@ -180,28 +168,75 @@ namespace VehicleManagementSystem.Forms {
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::VehicleManagementSystem.Properties.Resources.save_icon;
             this.saveBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.saveBtn.Location = new System.Drawing.Point(978, 1095);
+            this.saveBtn.Location = new System.Drawing.Point(923, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(230, 55);
             this.saveBtn.TabIndex = 14;
             this.saveBtn.Text = "Save Vehicle";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelBtn.BorderRadius = 10;
+            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancelBtn.FillColor = System.Drawing.Color.Silver;
+            this.cancelBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Image = global::VehicleManagementSystem.Properties.Resources.cancel_icon;
+            this.cancelBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.cancelBtn.Location = new System.Drawing.Point(752, 3);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(147, 55);
+            this.cancelBtn.TabIndex = 16;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BorderColor = System.Drawing.Color.DarkGray;
+            this.backBtn.BorderThickness = 4;
+            this.backBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.backBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.backBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.backBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.backBtn.FillColor = System.Drawing.Color.Transparent;
+            this.backBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.backBtn.ForeColor = System.Drawing.Color.White;
+            this.backBtn.Image = global::VehicleManagementSystem.Properties.Resources.chevron_backward_icon;
+            this.backBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.backBtn.Location = new System.Drawing.Point(51, 38);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.backBtn.Size = new System.Drawing.Size(45, 45);
+            this.backBtn.TabIndex = 17;
+            this.backBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(636, 1085);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 26);
+            this.panel1.TabIndex = 15;
+            // 
             // tableLowerInputs
             // 
-            this.tableLowerInputs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLowerInputs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLowerInputs.ColumnCount = 2;
             this.tableLowerInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLowerInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLowerInputs.Controls.Add(this.panelCarRental, 1, 0);
             this.tableLowerInputs.Controls.Add(this.panelPurchaseDetails, 0, 0);
             this.tableLowerInputs.Location = new System.Drawing.Point(51, 604);
+            this.tableLowerInputs.MaximumSize = new System.Drawing.Size(1203, 448);
             this.tableLowerInputs.Name = "tableLowerInputs";
             this.tableLowerInputs.RowCount = 1;
             this.tableLowerInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLowerInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLowerInputs.Size = new System.Drawing.Size(1153, 449);
+            this.tableLowerInputs.Size = new System.Drawing.Size(1153, 353);
             this.tableLowerInputs.TabIndex = 13;
             // 
             // panelCarRental
@@ -216,12 +251,12 @@ namespace VehicleManagementSystem.Forms {
             this.panelCarRental.Controls.Add(this.inputDailyRate);
             this.panelCarRental.Controls.Add(this.label19);
             this.panelCarRental.Controls.Add(this.panelRentalDetailsHeader);
-            this.panelCarRental.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCarRental.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCarRental.FillColor = System.Drawing.Color.White;
             this.panelCarRental.Location = new System.Drawing.Point(596, 0);
             this.panelCarRental.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.panelCarRental.Name = "panelCarRental";
-            this.panelCarRental.Size = new System.Drawing.Size(557, 449);
+            this.panelCarRental.Size = new System.Drawing.Size(557, 341);
             this.panelCarRental.TabIndex = 14;
             // 
             // inputTransmissionType
@@ -235,11 +270,11 @@ namespace VehicleManagementSystem.Forms {
             this.inputTransmissionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputTransmissionType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.inputTransmissionType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputTransmissionType.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTransmissionType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputTransmissionType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.inputTransmissionType.IntegralHeight = false;
             this.inputTransmissionType.ItemHeight = 50;
-            this.inputTransmissionType.Location = new System.Drawing.Point(277, 241);
+            this.inputTransmissionType.Location = new System.Drawing.Point(292, 241);
             this.inputTransmissionType.Margin = new System.Windows.Forms.Padding(10);
             this.inputTransmissionType.Name = "inputTransmissionType";
             this.inputTransmissionType.Size = new System.Drawing.Size(231, 56);
@@ -254,11 +289,11 @@ namespace VehicleManagementSystem.Forms {
             this.inputFuelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputFuelType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.inputFuelType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputFuelType.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputFuelType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputFuelType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.inputFuelType.IntegralHeight = false;
             this.inputFuelType.ItemHeight = 50;
-            this.inputFuelType.Location = new System.Drawing.Point(25, 241);
+            this.inputFuelType.Location = new System.Drawing.Point(40, 241);
             this.inputFuelType.Margin = new System.Windows.Forms.Padding(10);
             this.inputFuelType.Name = "inputFuelType";
             this.inputFuelType.Size = new System.Drawing.Size(227, 56);
@@ -272,7 +307,7 @@ namespace VehicleManagementSystem.Forms {
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label20.Location = new System.Drawing.Point(272, 211);
+            this.label20.Location = new System.Drawing.Point(287, 211);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(192, 26);
             this.label20.TabIndex = 27;
@@ -280,8 +315,6 @@ namespace VehicleManagementSystem.Forms {
             // 
             // inputSeatCapacity
             // 
-            this.inputSeatCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputSeatCapacity.BorderRadius = 10;
             this.inputSeatCapacity.BorderThickness = 2;
             this.inputSeatCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -293,12 +326,12 @@ namespace VehicleManagementSystem.Forms {
             this.inputSeatCapacity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.inputSeatCapacity.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSeatCapacity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputSeatCapacity.Location = new System.Drawing.Point(25, 355);
+            this.inputSeatCapacity.Location = new System.Drawing.Point(294, 121);
             this.inputSeatCapacity.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.inputSeatCapacity.Name = "inputSeatCapacity";
             this.inputSeatCapacity.PlaceholderText = "";
             this.inputSeatCapacity.SelectedText = "";
-            this.inputSeatCapacity.Size = new System.Drawing.Size(483, 55);
+            this.inputSeatCapacity.Size = new System.Drawing.Size(229, 55);
             this.inputSeatCapacity.TabIndex = 24;
             // 
             // label17
@@ -309,7 +342,7 @@ namespace VehicleManagementSystem.Forms {
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label17.Location = new System.Drawing.Point(20, 325);
+            this.label17.Location = new System.Drawing.Point(289, 90);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(183, 26);
             this.label17.TabIndex = 25;
@@ -323,7 +356,7 @@ namespace VehicleManagementSystem.Forms {
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label18.Location = new System.Drawing.Point(20, 212);
+            this.label18.Location = new System.Drawing.Point(35, 212);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 26);
             this.label18.TabIndex = 23;
@@ -331,8 +364,6 @@ namespace VehicleManagementSystem.Forms {
             // 
             // inputDailyRate
             // 
-            this.inputDailyRate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputDailyRate.BorderRadius = 10;
             this.inputDailyRate.BorderThickness = 2;
             this.inputDailyRate.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -344,12 +375,12 @@ namespace VehicleManagementSystem.Forms {
             this.inputDailyRate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.inputDailyRate.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputDailyRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputDailyRate.Location = new System.Drawing.Point(25, 119);
+            this.inputDailyRate.Location = new System.Drawing.Point(40, 119);
             this.inputDailyRate.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.inputDailyRate.Name = "inputDailyRate";
             this.inputDailyRate.PlaceholderText = "";
             this.inputDailyRate.SelectedText = "";
-            this.inputDailyRate.Size = new System.Drawing.Size(483, 55);
+            this.inputDailyRate.Size = new System.Drawing.Size(227, 55);
             this.inputDailyRate.TabIndex = 20;
             // 
             // label19
@@ -360,7 +391,7 @@ namespace VehicleManagementSystem.Forms {
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label19.Location = new System.Drawing.Point(20, 89);
+            this.label19.Location = new System.Drawing.Point(35, 89);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(148, 26);
             this.label19.TabIndex = 21;
@@ -420,12 +451,12 @@ namespace VehicleManagementSystem.Forms {
             this.panelPurchaseDetails.Controls.Add(this.label14);
             this.panelPurchaseDetails.Controls.Add(this.label13);
             this.panelPurchaseDetails.Controls.Add(this.panelPurchaseDetailsHeader);
-            this.panelPurchaseDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPurchaseDetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPurchaseDetails.FillColor = System.Drawing.Color.White;
             this.panelPurchaseDetails.Location = new System.Drawing.Point(0, 0);
             this.panelPurchaseDetails.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.panelPurchaseDetails.Name = "panelPurchaseDetails";
-            this.panelPurchaseDetails.Size = new System.Drawing.Size(556, 449);
+            this.panelPurchaseDetails.Size = new System.Drawing.Size(556, 341);
             this.panelPurchaseDetails.TabIndex = 11;
             // 
             // inputPurchaseDate
@@ -463,12 +494,12 @@ namespace VehicleManagementSystem.Forms {
             this.InputOdometer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.InputOdometer.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputOdometer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.InputOdometer.Location = new System.Drawing.Point(36, 355);
+            this.InputOdometer.Location = new System.Drawing.Point(294, 243);
             this.InputOdometer.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.InputOdometer.Name = "InputOdometer";
             this.InputOdometer.PlaceholderText = "";
             this.InputOdometer.SelectedText = "";
-            this.InputOdometer.Size = new System.Drawing.Size(482, 55);
+            this.InputOdometer.Size = new System.Drawing.Size(224, 55);
             this.InputOdometer.TabIndex = 18;
             // 
             // label16
@@ -479,7 +510,7 @@ namespace VehicleManagementSystem.Forms {
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label16.Location = new System.Drawing.Point(31, 325);
+            this.label16.Location = new System.Drawing.Point(286, 212);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(241, 26);
             this.label16.TabIndex = 19;
@@ -505,7 +536,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputPurchasePrice.Name = "inputPurchasePrice";
             this.inputPurchasePrice.PlaceholderText = "";
             this.inputPurchasePrice.SelectedText = "";
-            this.inputPurchasePrice.Size = new System.Drawing.Size(482, 55);
+            this.inputPurchasePrice.Size = new System.Drawing.Size(227, 56);
             this.inputPurchasePrice.TabIndex = 16;
             // 
             // label14
@@ -581,14 +612,14 @@ namespace VehicleManagementSystem.Forms {
             // 
             // panelBasicInformation
             // 
-            this.panelBasicInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBasicInformation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelBasicInformation.BackColor = System.Drawing.Color.Transparent;
             this.panelBasicInformation.BorderRadius = 20;
             this.panelBasicInformation.Controls.Add(this.tableBasicInfo);
             this.panelBasicInformation.Controls.Add(this.panelBasicInfoHeader);
             this.panelBasicInformation.FillColor = System.Drawing.Color.White;
             this.panelBasicInformation.Location = new System.Drawing.Point(51, 122);
+            this.panelBasicInformation.MaximumSize = new System.Drawing.Size(1203, 448);
             this.panelBasicInformation.Name = "panelBasicInformation";
             this.panelBasicInformation.Size = new System.Drawing.Size(1153, 448);
             this.panelBasicInformation.TabIndex = 9;
@@ -902,7 +933,7 @@ namespace VehicleManagementSystem.Forms {
             this.inputCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.inputCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.inputCategory.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.inputCategory.IntegralHeight = false;
             this.inputCategory.ItemHeight = 50;
@@ -1006,7 +1037,7 @@ namespace VehicleManagementSystem.Forms {
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(47, 78);
+            this.label3.Location = new System.Drawing.Point(118, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(296, 21);
             this.label3.TabIndex = 8;
@@ -1018,7 +1049,7 @@ namespace VehicleManagementSystem.Forms {
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label8.Location = new System.Drawing.Point(43, 35);
+            this.label8.Location = new System.Drawing.Point(114, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(398, 43);
             this.label8.TabIndex = 7;
@@ -1037,6 +1068,7 @@ namespace VehicleManagementSystem.Forms {
             this.panelBg.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.tableLowerInputs.ResumeLayout(false);
             this.panelCarRental.ResumeLayout(false);
             this.panelCarRental.PerformLayout();
@@ -1117,5 +1149,7 @@ namespace VehicleManagementSystem.Forms {
         private Guna.UI2.WinForms.Guna2Button saveBtn;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton backBtn;
+        private System.Windows.Forms.Panel panel2;
     }
 }
