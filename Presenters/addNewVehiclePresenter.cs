@@ -11,8 +11,24 @@ namespace VehicleManagementSystem.Presentor {
             _vehicleServices = vehicleServices;
         }
 
-        public void saveVehicle() {
-            _view.showError("TEST");
+        //private string ValidateInputs(IAddNewVehicleView _inputs) {
+        //    string[] ErrorMessage;
+        //    if (string.IsNullOrWhiteSpace(_view.VehicleIdentificationNumber)) {
+        //        _view.ShowError("VIN is required.");
+                
+        //    }
+
+        //    return ErrorMessage;
+        //}
+
+        public void SaveVehicle() {
+            
+
+            if (string.IsNullOrWhiteSpace(_view.VehiclePlateNum)) {
+                _view.ShowError("Plate Number is required.");
+                return;
+            }
         }
+
     }
 }

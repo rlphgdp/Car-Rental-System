@@ -235,9 +235,10 @@
     <Compile Include="Classes\UIRenderer.cs" />
     <Compile Include="Classes\NavigationHelper.cs" />
     <Compile Include="Classes\AppConfig.cs" />
+    <Compile Include="Classes\Validators.cs" />
     <Compile Include="Classes\WindowControls.cs" />
     <Compile Include="Data\MySQLConnectionContext.cs" />
-    <Compile Include="Data\VehicleEnums.cs" />
+    <Compile Include="Data\Enums\VehicleEnums.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Presenters\addNewVehiclePresenter.cs" />
     <Compile Include="Services\Implementations\VehicleServices.cs" />

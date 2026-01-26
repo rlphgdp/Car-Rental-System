@@ -15,7 +15,7 @@ namespace VehicleManagementSystem.View.Interfaces {
         string VehicleManufacturer { get; } 
         string VehicleCatergory { get; }
         string VehicleColor { get; }
-        Bitmap VehicleImage { get; }
+        string VehicleImagePath { get; }
 
         string VehiclePurchaseDate { get; }
         string VehiclePurchasePrice { get; }
@@ -26,6 +26,7 @@ namespace VehicleManagementSystem.View.Interfaces {
         string VehicleTransmissionType { get; }
         string VehicleSeatCapacity { get; }
 
-        void showError(string message);
+        void ShowError(string message);
+
     }
 }

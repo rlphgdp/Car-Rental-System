@@ -21,9 +21,7 @@ namespace VehicleManagementSystem.Forms {
         public string VehicleCatergory => inputCategory.Text;
         public string VehicleManufacturer => inputManufacturer.Text;
         public string VehicleColor => inputColor.Text;
-        public Bitmap VehicleImage => inputVehicleImage == null
-            ? null
-            : new Bitmap(inputVehicleImage);
+        public string VehicleImagePath => "TEST";
 
         // Vehicle Purchase Details
         public string VehiclePurchaseDate => inputPurchaseDate.Text;
@@ -36,10 +34,17 @@ namespace VehicleManagementSystem.Forms {
         public string VehicleTransmissionType => inputTransmissionType.Text;
         public string VehicleSeatCapacity => inputSeatCapacity.Text;
 
-        public void showError(string message) {
+        public void ShowError(string message) {
             MessageBox.Show(message, "Error");
         }
 
+        public void SetError(string inputName, string message) {
+            switch (inputName) {
+                case "inputColor":
+                    inputColor.ForeColor = Color.Red;
+                    break;
+            }
+        }
 
         private Bitmap inputVehicleImage;
 
@@ -54,7 +59,7 @@ namespace VehicleManagementSystem.Forms {
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
-            _presenter.saveVehicle();
+            _presenter.SaveVehicle();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e) {
@@ -80,11 +85,14 @@ namespace VehicleManagementSystem.Forms {
             }
         }
 
+
         private void addImageBtn_Click(object sender, EventArgs e) {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
                 openFileDialog.Title = "Select an image";
                 openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
                 openFileDialog.Multiselect = false;
+
+                
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
                     if (inputVehicleImage != null) {
@@ -98,8 +106,11 @@ namespace VehicleManagementSystem.Forms {
                     using (MemoryStream ms = new MemoryStream(imageBytes)) {
                         inputVehicleImage = new Bitmap(ms);
                     }
+                    vehiclePictureBox.Image = Image.FromFile(fullPath);
 
-                    vehicleImageFilename.Text = fileNameOnly;
+                    addImageBtn.Visible = false;
+
+                    //vehicleImageFilename.Text = fileNameOnly;
                 }
             }
         }
