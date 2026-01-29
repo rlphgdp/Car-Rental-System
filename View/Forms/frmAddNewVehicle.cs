@@ -15,16 +15,16 @@ namespace VehicleManagementSystem.Forms {
     public partial class frmAddNewVehicle : Form, IAddNewVehicleView {
         private class InputFieldUI {
             public Guna2TextBox _TextBox;
-            public Label _label;
+            public Label _errorLabel;
 
-            public InputFieldUI(Label label, Guna2TextBox textBox) {
-                _label = label;
+            public InputFieldUI(Label errorLabel, Guna2TextBox textBox) {
+                _errorLabel = errorLabel;
                 _TextBox = textBox;
             }
         }
 
-        addNewVehiclePresenter _presenter;
-        Dictionary<AddNewVehicleInputEnums, InputFieldUI> _inputFieldMap;
+        private addNewVehiclePresenter _presenter;
+        private Dictionary<AddNewVehicleInputEnums, InputFieldUI> _inputFieldMap;
 
         // Basic Vehicle Information
         public string VehicleIdentificationNumber => inputVehicleIdentificationNumber.Text;
@@ -39,7 +39,7 @@ namespace VehicleManagementSystem.Forms {
         // Vehicle Purchase Details
         public string VehiclePurchaseDate => inputPurchaseDate.Text;
         public string VehiclePurchasePrice => inputPurchasePrice.Text;
-        public string VehicleCurrentOdometer => InputOdometer.Text;
+        public string VehicleCurrentOdometer => inputCurrentOdometer.Text;
 
         // Vehicle Rental Details
         public string VehicleDailyRate => inputDailyRate.Text;
@@ -54,28 +54,59 @@ namespace VehicleManagementSystem.Forms {
         public void SetFieldError(AddNewVehicleInputEnums field, string message) {
             if (_inputFieldMap.TryGetValue(field, out InputFieldUI inputField)) { 
                 inputField._TextBox.BorderColor = Color.Red; 
-                inputField._label.ForeColor = Color.Red;
+                inputField._errorLabel.Text = message;
+                inputField._errorLabel.Visible = true;
             }
         }
 
-        
+        private void ClearFieldError(InputFieldUI inputField) {
+            inputField._TextBox.BorderColor = Color.FromArgb(213, 218, 223);
+            inputField._errorLabel.Text = null;
+            inputField._errorLabel.Visible = false;
+        }
 
         public frmAddNewVehicle() {
             InitializeComponent();
-
             _presenter = new addNewVehiclePresenter(this, new VehicleServices());
 
-            // Initialized dictionary for error handling
-            _inputFieldMap = new Dictionary<AddNewVehicleInputEnums, InputFieldUI> {
-                { AddNewVehicleInputEnums.VehicleIdentificationNumber, 
-                  new InputFieldUI(labelVehicleIdentificationNumber, inputVehicleIdentificationNumber) 
-                },
+            IntializeInputFieldMap();
+            InitializeComboBoxOptions();
+        }
 
+        // Initialized inputFieldMap dictionary for error handling
+        private void IntializeInputFieldMap() {
+            _inputFieldMap = new Dictionary<AddNewVehicleInputEnums, InputFieldUI> {
+                { AddNewVehicleInputEnums.VehicleIdentificationNumber,
+                  new InputFieldUI(errorLabelVehicleIdentificationNumber, inputVehicleIdentificationNumber)
+                }, { AddNewVehicleInputEnums.VehiclePlateNum,
+                  new InputFieldUI(errorLabelPlateNum, inputPlateNum)
+                }, { AddNewVehicleInputEnums.VehicleModel,
+                  new InputFieldUI(errorLabelModel, inputModel)
+                }, { AddNewVehicleInputEnums.VehicleManufacturer,
+                  new InputFieldUI(errorLabelManufacturer, inputManufacturer)
+                }, { AddNewVehicleInputEnums.VehicleColor,
+                  new InputFieldUI(errorLabelColor, inputColor)
+                }, { AddNewVehicleInputEnums.VehicleYearModel,
+                  new InputFieldUI(errorLabelYearModel, inputYearModel)
+                }, { AddNewVehicleInputEnums.VehiclePurchasePrice,
+                  new InputFieldUI(errorLabelPurchasePrice, inputPurchasePrice)
+                }, { AddNewVehicleInputEnums.VehicleCurrentOdometer,
+                  new InputFieldUI(errorLabelCurrentOdometer, inputCurrentOdometer)
+                }, { AddNewVehicleInputEnums.VehicleDailyRate,
+                  new InputFieldUI(errorLabelDailyRate, inputDailyRate)
+                }, { AddNewVehicleInputEnums.VehicleSeatCapacity,
+                  new InputFieldUI(errorLabelSeatCapacity, inputSeatCapacity)
+                },
             };
 
-            // Initialized Combobox options
+            foreach (var field in _inputFieldMap.Values) {
+                field._TextBox.Enter += (s, e) => ClearFieldError(field);
+            }
+        }
+
+        private void InitializeComboBoxOptions() {
             inputCategory.DataSource = Enum.GetValues(typeof(VehicleEnums.Category));
-            inputFuelType.DataSource = Enum.GetValues(typeof (VehicleEnums.FuelType));
+            inputFuelType.DataSource = Enum.GetValues(typeof(VehicleEnums.FuelType));
             inputTransmissionType.DataSource = Enum.GetValues(typeof(VehicleEnums.TransmissionType));
         }
 
