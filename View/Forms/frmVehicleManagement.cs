@@ -19,20 +19,20 @@ namespace VehicleManagementSystem.Forms {
         }
 
         public void DisplayVehicles(List<VehicleDto> vehicles) {
-            tableLayoutPanel1.SuspendLayout();
+            tableLayoutVehicles.SuspendLayout();
 
-            tableLayoutPanel1.Controls.Clear();
-            tableLayoutPanel1.RowStyles.Clear();
-            tableLayoutPanel1.RowCount = 0;
+            tableLayoutVehicles.Controls.Clear();
+            tableLayoutVehicles.RowStyles.Clear();
+            tableLayoutVehicles.RowCount = 0;
 
             int col = 0;
             int row = 0;
-            int maxCols = 3;
+            int maxCols = 4;
 
             foreach (var vehicle in vehicles) {
                 if (col == 0) {
-                    tableLayoutPanel1.RowCount++;
-                    tableLayoutPanel1.RowStyles.Add(
+                    tableLayoutVehicles.RowCount++;
+                    tableLayoutVehicles.RowStyles.Add(
                         new RowStyle(SizeType.AutoSize)
                     );
                 }
@@ -42,7 +42,7 @@ namespace VehicleManagementSystem.Forms {
                 card.Dock = DockStyle.Fill;
                 card.Margin = new Padding(10);
 
-                tableLayoutPanel1.Controls.Add(card, col, row);
+                tableLayoutVehicles.Controls.Add(card, col, row);
 
                 col++;
                 if (col >= maxCols) {
@@ -51,7 +51,7 @@ namespace VehicleManagementSystem.Forms {
                 }
             }
 
-            tableLayoutPanel1.ResumeLayout();
+            tableLayoutVehicles.ResumeLayout();
         }
 
         public void ShowError(string message) {

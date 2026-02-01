@@ -13,5 +13,7 @@ namespace VehicleManagementSystem.UserControls {
         public VehicleCardControl() {
             InitializeComponent();
         }
+
+
     }
 }
