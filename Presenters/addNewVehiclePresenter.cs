@@ -20,6 +20,10 @@ namespace VehicleManagementSystem.Presentor {
             if (!IsAllInputsValid(_view)) 
                 return;
 
+            if (_view.VehicleImagePath == null)
+                return;
+            
+
             // ADD VALIDATION FOR IMAGE PATH
 
             Vehicle newVehicle = new Vehicle {
@@ -28,11 +32,11 @@ namespace VehicleManagementSystem.Presentor {
                 LicensePlate = _view.VehiclePlateNum,
 
                 // Basic Info
-                Manufacturer = _view.VehicleManufacturer,
-                Model = _view.VehicleModel,
+                Manufacturer = Helpers.ConvertToCapitalized(_view.VehicleManufacturer),
+                Model = Helpers.ConvertToCapitalized(_view.VehicleModel),
                 YearModel = int.Parse(_view.VehicleYearModel),
-                Color = _view.VehicleColor,
-                Category = _view.VehicleCatergory,
+                Color = Helpers.ConvertToCapitalized(_view.VehicleColor),
+                Category = _view.VehicleCatergory.Trim(),
 
                 // Purchase
                 PurchaseDate = DateTime.Parse(_view.VehiclePurchaseDate),
@@ -42,8 +46,8 @@ namespace VehicleManagementSystem.Presentor {
                 CurrentOdometerReading = int.Parse(_view.VehicleCurrentOdometer),
                 CurrentStatus = "Available",
                 DailyRate = decimal.Parse(_view.VehicleDailyRate),
-                FuelType = _view.VehicleFuelType,
-                Transmission = _view.VehicleTransmissionType,
+                FuelType = _view.VehicleFuelType.Trim(),
+                Transmission = _view.VehicleTransmissionType.Trim(),
                 SeatingCapacity = int.Parse(_view.VehicleSeatCapacity),
 
                 ImagePath = GetFinalVehicleImagePath(_view.VehicleImagePath, _view.VehiclePlateNum),

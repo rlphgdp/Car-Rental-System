@@ -169,6 +169,10 @@ namespace VehicleManagementSystem.Forms {
                 vehiclePictureBox.Image.Dispose();
             }
 
+            if (_tempSelectedImagePath != null) { 
+                _tempSelectedImagePath = null;
+            }
+
             closeImageBtn.Visible = false;
             addImageBtn.Visible = true;
         }
