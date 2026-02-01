@@ -13,7 +13,7 @@ namespace VehicleManagementSystem.Data.Enums {
         VehicleManufacturer,
         VehicleCatergory,
         VehicleColor,
-        VehicleImagePath,
+        VehicleImage,
         VehiclePurchasePrice,
         VehicleSeatCapacity,
         VehicleDailyRate,

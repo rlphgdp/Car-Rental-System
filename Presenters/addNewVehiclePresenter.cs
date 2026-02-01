@@ -20,12 +20,6 @@ namespace VehicleManagementSystem.Presentor {
             if (!IsAllInputsValid(_view)) 
                 return;
 
-            if (_view.VehicleImagePath == null)
-                return;
-            
-
-            // ADD VALIDATION FOR IMAGE PATH
-
             Vehicle newVehicle = new Vehicle {
                 // Identifiers
                 VIN = _view.VehicleIdentificationNumber,
@@ -71,6 +65,15 @@ namespace VehicleManagementSystem.Presentor {
             return Helpers.SaveImageToAppData(imagePath, subFolderImagePath);
         }
 
+        private bool IsImagePathValid(IAddNewVehicleView inputs) {
+            if (String.IsNullOrEmpty(inputs.VehicleImagePath)) {
+                inputs.SetFieldError(AddNewVehicleInputEnums.VehicleImage, "Vehicles main image is required");
+                return false;
+            }
+
+            return true;
+        }
+
         private bool IsAllInputsValid(IAddNewVehicleView inputs) {
             bool hadNoError = true;
 
@@ -78,6 +81,9 @@ namespace VehicleManagementSystem.Presentor {
                 hadNoError = false;
 
             if (!IsAllInputsFilledUp(inputs))
+                hadNoError = false;
+
+            if (!IsImagePathValid(inputs))
                 hadNoError = false;
 
             return hadNoError;

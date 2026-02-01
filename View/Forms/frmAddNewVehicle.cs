@@ -53,6 +53,15 @@ namespace VehicleManagementSystem.Forms {
         }
 
         public void SetFieldError(AddNewVehicleInputEnums field, string message) {
+            if (field == AddNewVehicleInputEnums.VehicleImage) {
+                errorLabelInputImage.Text = message;
+                errorLabelInputImage.Visible = true;
+
+                addImageBtn.BorderThickness = 2; 
+
+                return;
+            }
+
             if (_inputFieldMap.TryGetValue(field, out InputFieldUI inputField)) { 
                 inputField._TextBox.BorderColor = Color.Red; 
                 inputField._errorLabel.Text = message;
@@ -138,6 +147,10 @@ namespace VehicleManagementSystem.Forms {
             }
         }
 
+        private void clearImageInputError() {
+            errorLabelInputImage.Visible = false;
+            addImageBtn.BorderThickness = 0; 
+        }
 
         private void addImageBtn_Click(object sender, EventArgs e) {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
@@ -149,6 +162,8 @@ namespace VehicleManagementSystem.Forms {
                     if (vehiclePictureBox.Image != null) {
                         vehiclePictureBox.Image.Dispose();
                     }
+
+                    clearImageInputError();
 
                     string fullPath = openFileDialog.FileName;
                     string fileNameOnly = Path.GetFileName(fullPath);

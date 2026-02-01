@@ -94,6 +94,7 @@ namespace VehicleManagementSystem.Forms {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.errorLabelInputImage = new System.Windows.Forms.Label();
             this.panelBg.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -707,6 +708,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             // panelBasicInfoLeft
             // 
+            this.panelBasicInfoLeft.Controls.Add(this.errorLabelInputImage);
             this.panelBasicInfoLeft.Controls.Add(this.closeImageBtn);
             this.panelBasicInfoLeft.Controls.Add(this.addImageBtn);
             this.panelBasicInfoLeft.Controls.Add(this.label7);
@@ -743,6 +745,7 @@ namespace VehicleManagementSystem.Forms {
             // 
             this.addImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.addImageBtn.BorderColor = System.Drawing.Color.Red;
             this.addImageBtn.BorderRadius = 10;
             this.addImageBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addImageBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1214,6 +1217,18 @@ namespace VehicleManagementSystem.Forms {
             this.label8.TabIndex = 7;
             this.label8.Text = "Bring in a New Vehicle";
             // 
+            // errorLabelInputImage
+            // 
+            this.errorLabelInputImage.AutoSize = true;
+            this.errorLabelInputImage.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabelInputImage.ForeColor = System.Drawing.Color.Red;
+            this.errorLabelInputImage.Location = new System.Drawing.Point(18, 482);
+            this.errorLabelInputImage.Name = "errorLabelInputImage";
+            this.errorLabelInputImage.Size = new System.Drawing.Size(75, 19);
+            this.errorLabelInputImage.TabIndex = 33;
+            this.errorLabelInputImage.Text = "Required";
+            this.errorLabelInputImage.Visible = false;
+            // 
             // frmAddNewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1322,5 +1337,6 @@ namespace VehicleManagementSystem.Forms {
         private System.Windows.Forms.Label errorLabelDailyRate;
         private System.Windows.Forms.Label errorLabelCurrentOdometer;
         private System.Windows.Forms.Label errorLabelPurchasePrice;
+        private System.Windows.Forms.Label errorLabelInputImage;
     }
 }
